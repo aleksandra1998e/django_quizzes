@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тесты</title>
+</head>
+<body>
+    <h1>Наши тесты</h1>
+    {% if quiz_list %}
+    <ul>
+        {% for quiz in quiz_list %}
+        <li>
+            <a href="/quiz/{{quiz.id}}"> {{quiz.name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>Тесты в разработке</p>
+    {% endif %}
+</body>
+</html>
