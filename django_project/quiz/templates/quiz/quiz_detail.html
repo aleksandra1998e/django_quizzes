@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{object.name}}</title>
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+        <h1> {{object.name}} </h1>
+                <p> {{object.description}} </p>
+
+        <form method="LINK" action="question/1/">
+            <input type="submit" value="Приступить">
+
+        </form>
+        <form method="LINK" action="/quiz/">
+            <input type="submit" value="Выйти">
+        </form>
+
+        <form method="LINK" action="/logout/">
+            <input type="submit" value="Сменить пользователя">
+        </form>
+    {% else %}
+
+        <h3>Для прохождения тестов необходимо авторизоваться.</h3>
+
+        <form method="LINK" action="/login/">
+            <input type="submit" value="Авторизоваться">
+        </form>
+
+    {% endif %}
+</body>
+</html>
