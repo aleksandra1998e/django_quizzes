@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
     <title>{{object.name}}</title>
 </head>
 <body>
@@ -10,22 +12,22 @@
                 <p> {{object.description}} </p>
 
         <form method="LINK" action="question/1/">
-            <input type="submit" value="Приступить">
+            <input type="submit" value="Приступить" class="all_button">
 
         </form>
         <form method="LINK" action="/quiz/">
-            <input type="submit" value="Выйти">
+            <input type="submit" value="К списку вопросов" class="all_button">
         </form>
 
         <form method="LINK" action="/logout/">
-            <input type="submit" value="Сменить пользователя">
+            <input type="submit" value="Сменить пользователя" class="del_button">
         </form>
     {% else %}
 
         <h3>Для прохождения тестов необходимо авторизоваться.</h3>
 
         <form method="LINK" action="/login/">
-            <input type="submit" value="Авторизоваться">
+            <input type="submit" value="Авторизоваться" class="all_button">
         </form>
 
     {% endif %}

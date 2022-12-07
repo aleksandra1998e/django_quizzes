@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
     <title>Регистрация</title>
 </head>
 <body>
@@ -10,7 +12,7 @@
     <form method="post">
       {% csrf_token %}
       {{form.as_p}}
-      <button type="submit">Зарегистрироваться</button>
+      <button type="submit" class="all_button">Зарегистрироваться</button>
     </form>
 
 </body>

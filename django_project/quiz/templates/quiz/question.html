@@ -1,23 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
     <title>{{quiz.name}}</title>
 </head>
 <body>
 {% if request.user.is_authenticated %}
 <h4>Вопрос {{number}} из {{count}}</h4>
+
 <h1> {{question.title}} </h1>
+
     <form method="post" action="/quiz/{{quiz_id}}/question/{{number}}/{{idenef}}/">
         {% csrf_token %}
-  <p><input type="checkbox" name="answer1" value="1">{{question.option_1}}</p>
+  <p><input type="checkbox" name="answer1" value="1">{{question.option_1}}</label></p>
   <p><input type="checkbox" name="answer2" value="2">{{question.option_2}}</p>
   <p><input type="checkbox" name="answer3" value="3">{{question.option_3}}</p>
   <p><input type="checkbox" name="answer4" value="4">{{question.option_4}}</p>
 
 
 
-        <button type="submit">
+        <button type="submit" class="all_button">
             Отправить
         </button>
 
@@ -25,7 +29,7 @@
 {% else %}
 <h3>Для прохождения тестов необходимо авторизоваться.</h3>
 <form method="LINK" action="/login/">
-    <input type="submit" value="Авторизоваться">
+    <input type="submit" value="Авторизоваться" class="all_button">
 </form>
 {% endif %}
 </body>

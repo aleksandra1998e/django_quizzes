@@ -1,13 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
     <title>Тесты</title>
 </head>
 <body>
     <h1>Наши тесты</h1>
     {% if quiz_list %}
-    <ul>
+    <ul class="rounded">
         {% for quiz in quiz_list %}
         <li>
             <a href="/quiz/{{quiz.id}}"> {{quiz.name}}</a>

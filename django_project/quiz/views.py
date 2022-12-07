@@ -84,4 +84,4 @@ class QuizQuestionView(View):
 
             return HttpResponseRedirect('/quiz/{}/question/{}/{}/'.format(quiz_id, number+1, idenef))
         else:
-            return redirect(QuizQuestionView)
+            return HttpResponseRedirect('/quiz/{}/question/{}/{}/'.format(quiz_id, number, idenef))
